@@ -1,0 +1,41 @@
+#logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6875rem;
+  padding-block: 2.75rem 2.875rem;
+
+  h2 {
+    font-family: var(--ff-sora);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--content-primary);
+  }
+}
+
+header {
+  /* color: var(--content-primary); */
+  margin-bottom: 2.625rem;
+
+  .gradient-text {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 150%;
+
+    background: linear-gradient(
+      to right,
+      var(--content-secondary),
+      var(--background-gray)
+    ); /* substitua pelas cores reais */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  h1 {
+    font: var(--display-medium);
+    font-size: 2.5rem;
+    color: var(--content-primary);
+  }
+}
