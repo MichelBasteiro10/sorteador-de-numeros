@@ -5,6 +5,7 @@
 }
 
 body {
+    color: white;
     background-color: var(--background-primary);
 }
 
@@ -46,8 +47,8 @@ body {
     --Overline: 700 1rem/150% var(--ff-Roboto-Mono);
 
     --ff-roboto-flex: 'Roboto Flex', sans-serif;
-    --label-small: 700 1rem/150% var(--ff-roboto-flex);
-    --label-medium: 700 1.25rem/150% var(--ff-roboto-flex);
+    --label-small: 800 1rem/150% var(--ff-roboto-flex);
+    --label-medium: 800 1.25rem/150% var(--ff-roboto-flex);
     --paragraph-large: 500 1rem/150% var(--ff-roboto-flex);
     --paragraph-medium: 500 0.875rem/150% var(--ff-roboto-flex);
     --paragraph-small: 500 0.75rem/150% var(--ff-roboto-flex);

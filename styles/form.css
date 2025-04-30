@@ -1,0 +1,139 @@
+form {
+  .title-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 2.5rem;
+
+    h3 {
+      font: var(--label-medium);
+      /* color: var(--content-primary); */
+    }
+
+    p {
+      font: var(--paragraph-medium);
+      font-weight: 200;
+      color: var(--content-tertiary);
+    }
+  }
+
+  #fields {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .inputs-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    p {
+      font: var(--label-small);
+      color: var(--content-secondary);
+
+      transition: all 0.2s ease-in-out;
+    }
+
+    .center-p {
+      margin: 0 auto;
+    }
+
+    input[type="number"] {
+      padding: 0.25rem 0.5rem;
+      width: 5.375rem;
+      height: 3.5rem;
+      background-color: var(--background-primary);
+      border: 2px solid transparent;
+      border-radius: 0.5rem;
+      text-align: center;
+      font: var(--display-small);
+      color: var(--content-primary);
+      transition: all 0.3ms ease-in-out;
+
+    }
+
+    input[type="number"]::placeholder {
+      font: var(--display-small);
+      color: var(--content-primary);
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      background-image: linear-gradient(
+          var(--background-primary),
+          var(--background-primary)
+        ),
+        var(--gradient-border);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:hover {
+      transition: all 3s ease;
+
+      p {
+        color: var(--content-brand);
+      }
+
+      input[type="number"] {
+        background-image: linear-gradient(
+            var(--background-primary),
+            var(--background-primary)
+          ),
+          var(--gradient-border);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+      }
+    }
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .toggle input {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .slider {
+    width: 30px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 999px;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 3px;
+    left: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle input:checked + .slider {
+    background: var(--gradient-background);
+  }
+  
+  .toggle input:checked + .slider::before {
+    transform: translateX(10px);
+  }
+}

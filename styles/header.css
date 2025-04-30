@@ -27,7 +27,7 @@ header {
       to right,
       var(--content-secondary),
       var(--background-gray)
-    ); /* substitua pelas cores reais */
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
