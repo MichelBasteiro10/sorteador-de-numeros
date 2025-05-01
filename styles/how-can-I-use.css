@@ -1,0 +1,28 @@
+#how-can-I-use {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    margin-bottom: 3.875rem;
+
+    .explanations {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: .5rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: .1rem;
+
+            .purple-text {
+                font: var(--paragraph-medium);
+                color: var(--content-brand);
+            }
+
+            p {
+                font: var(--paragraph-small);
+            }
+        }
+    }
+}
