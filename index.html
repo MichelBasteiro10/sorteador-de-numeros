@@ -37,46 +37,68 @@
       <h2>NUMBERS</h2>
     </div>
 
-    <header class="container">
-      <p class="gradient-text">ONLINE - GRATUITO</p>
-      <h1>SORTEADOR DE NÚMEROS</h1>
-    </header>
+    <div class="flex-container">
+      <header class="container">
+        <p class="gradient-text">ONLINE - GRATUITO</p>
+        <h1>SORTEADOR DE NÚMEROS</h1>
 
-    <form action="" class="container">
-      <div class="title-form">
-        <h3>QUERO SORTEAR:</h3>
-        <p>
-          Defina o intervalo e a quantidade de números, clique em "Sortear" e
-          veja os resultados na tela. É rápido e fácil!
-        </p>
-      </div>
-
-      <div id="fields">
-        <div class="inputs-fields">
-          <p>NÚMEROS</p>
-          <input type="number" min="1" placeholder="5" required />
+        <div id="how-can-I-use-desktop">
+          <div class="explanations">
+            <img src="assets/support.svg" alt="Boneco com balãozinho" />
+            <div>
+              <h4 class="purple-text">Como funciona o sorteador de números?</h4>
+              <p>
+                O sorteador utiliza um algoritmo de geração aleatória para criar
+                números dentro do intervalo especificado pelo usuário.
+              </p>
+            </div>
+          </div>
+          <div class="explanations">
+            <img src="assets/support.svg" alt="Boneco com balãozinho" />
+            <div>
+              <h4 class="purple-text">Posso escolher o intervalo dos números?</h4>
+              <p>
+                Sim, você pode definir os valores mínimo e máximo para o intervalo
+                dos números sorteados.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="inputs-fields">
-          <p class="center-p">DE</p>
-          <input type="number" min="1" placeholder="1" required />
-        </div>
-        <div class="inputs-fields">
-          <p class="center-p">ATÉ</p>
-          <input type="number" min="1" placeholder="100" required />
-        </div>
-      </div>
+      </header>
 
-      <label class="toggle">
-        <input type="checkbox" />
-        <span class="slider"></span>
-        Não repetir número
-      </label>
-
-      <button type="submit">
-        <p>SORTEAR</p>
-        <img src="assets/right-arrow.svg" alt="Seta para direita" />
-      </button>
-    </form>
+      <form action="" class="container">
+        <div class="title-form">
+          <h3>QUERO SORTEAR:</h3>
+          <p>
+            Defina o intervalo e a quantidade de números, clique em "Sortear" e
+            veja os resultados na tela. É rápido e fácil!
+          </p>
+        </div>
+        <div id="fields">
+          <div class="inputs-fields">
+            <p>NÚMEROS</p>
+            <input type="number" min="1" placeholder="5" required />
+          </div>
+          <div class="inputs-fields">
+            <p class="center-p">DE</p>
+            <input type="number" min="1" placeholder="1" required />
+          </div>
+          <div class="inputs-fields">
+            <p class="center-p">ATÉ</p>
+            <input type="number" min="1" placeholder="100" required />
+          </div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" />
+          <span class="slider"></span>
+          Não repetir número
+        </label>
+        <button type="submit">
+          <p>SORTEAR</p>
+          <img src="assets/right-arrow.svg" alt="Seta para direita" />
+        </button>
+      </form>
+    </div>
 
     <div id="how-can-I-use" class="container">
       <div class="explanations">

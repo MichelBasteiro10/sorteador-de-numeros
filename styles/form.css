@@ -51,7 +51,6 @@ form {
       font: var(--display-small);
       color: var(--content-primary);
       transition: all 0.3ms ease-in-out;
-
     }
 
     input[type="number"]::placeholder {
@@ -104,12 +103,12 @@ form {
     font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
-  
+
     input {
       opacity: 0;
       position: absolute;
     }
-  
+
     .slider {
       width: 30px;
       height: 20px;
@@ -117,7 +116,7 @@ form {
       border-radius: 999px;
       position: relative;
       transition: background 0.3s ease;
-  
+
       &::before {
         content: "";
         position: absolute;
@@ -130,15 +129,15 @@ form {
         transition: transform 0.3s ease;
       }
     }
-  
+
     input:checked + .slider {
       background: var(--gradient-background);
-  
+
       &::before {
         transform: translateX(10px);
       }
     }
-  }  
+  }
 
   button {
     display: flex;
@@ -158,7 +157,7 @@ form {
     overflow: hidden;
     z-index: 1;
     transition: color 0.3s ease, background-color 0.3s ease;
-  
+
     &::before,
     &::after {
       content: "";
@@ -168,7 +167,7 @@ form {
       opacity: 0;
       z-index: -1;
     }
-  
+
     &::before {
       top: -2px;
       left: -2px;
@@ -178,7 +177,7 @@ form {
       background-size: 200% 200%;
       animation: borderMove 4s linear infinite;
     }
-  
+
     &::after {
       top: 2px;
       left: 2px;
@@ -191,7 +190,7 @@ form {
     img {
       transition: transform 0.3s ease;
     }
-  
+
     &:hover {
       &::before,
       &::after {
@@ -211,5 +210,31 @@ form {
   }
   100% {
     background-position: 100% 50%;
+  }
+}
+
+@media (width >= 80em) {
+  form {
+    margin-top: 3rem;
+
+    .title-form {
+      width: 30.125rem;
+      
+      p {
+        width: 25rem;
+      }
+    }
+
+    #fields {
+      width: 30.125rem;
+    }
+
+    .toggle {
+      width: 30.125rem;
+    }
+
+    button {
+      width: 30.125rem;
+    }
   }
 }

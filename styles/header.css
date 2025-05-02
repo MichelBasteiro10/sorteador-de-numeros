@@ -39,3 +39,21 @@ header {
     color: var(--content-primary);
   }
 }
+
+
+@media (width >= 80em) {
+  #logo {
+    justify-content: flex-start;
+    padding-block: 4.75rem 5.5625rem;
+  }
+
+  header {
+    width: 32rem;
+
+    h1 {
+      font: var(--display-large);
+      width: 32rem;
+      margin-block: 0.75rem 2.375rem;
+    }
+  }
+}

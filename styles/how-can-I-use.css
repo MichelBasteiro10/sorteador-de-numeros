@@ -26,3 +26,42 @@
         }
     }
 }
+
+#how-can-I-use-desktop {
+    display: none;
+    flex-direction: column;
+    gap: 2.25rem;
+    margin-bottom: 3.875rem;
+
+    .explanations {
+        width: 24.125rem;
+        display: flex;
+        align-items: start;
+        gap: .5rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: .1rem;
+
+            .purple-text {
+                font: var(--paragraph-medium);
+                color: var(--content-brand);
+            }
+
+            p {
+                font: var(--paragraph-small);
+            }
+        }
+    }
+}
+
+@media (width >= 80em) {
+    #how-can-I-use {
+        display: none;
+    }
+
+    #how-can-I-use-desktop {
+        display: flex;
+    }
+}

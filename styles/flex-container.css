@@ -1,0 +1,7 @@
+@media (width >= 80em) {
+    .flex-container {
+        display: flex;
+        width: 80rem;
+        margin-inline: auto;
+    }
+}
