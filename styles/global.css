@@ -46,7 +46,7 @@ body {
   --display-medium: 800 2.5rem/130% var(--ff-sora);
 
   --ff-roboto-mono: "Roboto Mono", sans-serif;
-  --Overline: 700 1rem/150% var(--ff-Roboto-Mono);
+  --font-overline: 700 1rem/150% var(--ff-Roboto-Mono);
 
   --ff-roboto-flex: "Roboto Flex", sans-serif;
   --label-small: 800 1rem/150% var(--ff-roboto-flex);
@@ -76,4 +76,8 @@ body {
   .only-desktop {
     display: initial;
   }
+}
+
+li {
+  list-style: none;
 }

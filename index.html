@@ -66,7 +66,7 @@
         </div>
       </header>
 
-      <form action="" class="container">
+      <form class="container">
         <div class="title-form">
           <h3>QUERO SORTEAR:</h3>
           <p>
@@ -77,27 +77,43 @@
         <div id="fields">
           <div class="inputs-fields">
             <p>NÚMEROS</p>
-            <input type="number" min="1" placeholder="5" required />
+            <input type="number" min="1" placeholder="5" required id="amount-of-numbers" />
           </div>
           <div class="inputs-fields">
             <p class="center-p">DE</p>
-            <input type="number" min="1" placeholder="1" required />
+            <input type="number" min="1" placeholder="1" required id="from" />
           </div>
           <div class="inputs-fields">
             <p class="center-p">ATÉ</p>
-            <input type="number" min="1" placeholder="100" required />
+            <input type="number" min="1" placeholder="100" required id="until" />
           </div>
         </div>
         <label class="toggle">
-          <input type="checkbox" />
+          <input type="checkbox" id="not-repeat-number" />
           <span class="slider"></span>
           Não repetir número
         </label>
-        <button type="submit">
+        <button type="submit" id="draw">
           <p>SORTEAR</p>
           <img src="assets/right-arrow.svg" alt="Seta para direita" />
         </button>
       </form>
+
+      <div id="result-screen" class="container">
+        <div class="result-header">
+          <h3>RESULTADO DO SORTEIO</h3>
+          <p><span id="draw-counter">1º </span>RESULTADO</p>
+        </div>
+
+        <ul class="list-numbers">
+        </ul>
+
+        <button type="submit" id="draw-again">
+          <p>SORTEAR NOVAMENTE</p>
+          <img src="assets/play.svg" alt="Icone de sortear novamente">
+        </button>
+      </div>
+
     </div>
 
     <div id="how-can-I-use" class="container">
@@ -122,5 +138,7 @@
         </div>
       </div>
     </div>
+
+    <script src="scripts.js"></script>
   </body>
 </html>

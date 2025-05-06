@@ -8,7 +8,7 @@ form {
 
     h3 {
       font: var(--label-medium);
-      /* color: var(--content-primary); */
+      color: var(--content-primary);
     }
 
     p {
@@ -157,6 +157,7 @@ form {
     overflow: hidden;
     z-index: 1;
     transition: color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
 
     &::before,
     &::after {
