@@ -69,7 +69,7 @@ function generateNumbers() {
 
       // Verifica se o número ja existe dentro do objeto
       if (numbersToDisplay[randomNumber] === undefined) {
-        numbersToDisplay[randomNumber] = true;
+        numbersToDisplay[randomNumber] = randomNumber;
       }
     }
   }
