@@ -24,7 +24,7 @@ newDrawButton.addEventListener(`click`, () => {
   clicks++;
   drawCounter.textContent = `${clicks}º `;
 
-  newDraw()
+  newDraw();
 });
 
 // função para fazer o sorteio.
@@ -37,63 +37,78 @@ function generateNumbers() {
     noRepeat: notRepeat.checked,
   };
 
+  // Criando um objeto para armazenar os números sorteados.
+  const numbersToDisplay = {};
+
   // verificando se o mínimo é maior que o máximo;
   if (amountsReceived.minimum >= amountsReceived.maximum) {
     alert(`O Número máximo deve ser maior que o minímo`);
     return;
   }
 
-  // Verificando se a opção "Não repetir" está marcada caso a quantidade a ser sorteada for maior que a quantidade total de numeros possíveis.
+  // Verificando se a opção "Não repetir" está marcada.
   if (amountsReceived.noRepeat) {
     const range = amountsReceived.maximum - amountsReceived.minimum + 1;
+    // Caso a quantidade a ser sorteada for maior que a quantidade total de numeros possíveis.
     if (amountsReceived.amount > range) {
       alert(
         `Não é possivel gerar ${amountsReceived.amount} números únicos entre ${amountsReceived.minimum} e ${amountsReceived.maximum}.`
       );
       return;
     }
-  }
 
-  // Criando um objeto para armazenar os números sorteados.
-  const generatedNumbers = {};
+    // Percorre o objeto de numeros gerados enquanto ele for menor que a quantidade de números sorteados.
+    while (Object.keys(numbersToDisplay).length < amountsReceived.amount) {
+      // armazena o número sorteado.
+      let randomNumber =
+        // Faz o número aleatório ser gerado entre o mínimo e o máximo.
+        Math.floor(
+          Math.random() *
+            (amountsReceived.maximum - amountsReceived.minimum + 1)
+        ) + amountsReceived.minimum;
 
-  // Percorre o objeto de numeros gerados enquanto ele for menor que a quantidade de números sorteados.
-  while (Object.keys(generatedNumbers).length < amountsReceived.amount) {
-    // armazena o número sorteado.
-    let randomNumber =
-      // Faz o número aleatório ser gerado entre o mínimo e o máximo.
-      Math.floor(
-        Math.random() * (amountsReceived.maximum - amountsReceived.minimum + 1)
-      ) + amountsReceived.minimum;
-
-    // Verifica se pode ou não repetir números, caso não possa repetir verifica se o número existe dentro do objeto.
-    if (
-      !amountsReceived.noRepeat ||
-      (amountsReceived.noRepeat && generatedNumbers[randomNumber] === undefined)
-    ) {
-      generatedNumbers[randomNumber] = true;
+      // Verifica se o número ja existe dentro do objeto
+      if (numbersToDisplay[randomNumber] === undefined) {
+        numbersToDisplay[randomNumber] = true;
+      }
     }
   }
-
-  Object.keys(generatedNumbers).forEach((chave) => {
-    // Criando o elemento "li" e adicionando a classe.
-    const li = document.createElement(`li`);
-    li.classList.add(`drawn-number`);
-
-    // Criando o elemento "p" e obtendo o valor do objeto.
-    const drawnNumber = document.createElement(`p`);
-    drawnNumber.textContent = chave;
-
-    // Adicionando a "li" na "ul"
-    listNumbers.appendChild(li);
-    // Adicionando o "p" na "li"
-    li.appendChild(drawnNumber);
-  });
+  // Faz o sorteio podendo repetir números.
+  else {
+    for (let i = 0; i < amountsReceived.amount; i++) {
+      let randomNumber = Math.floor(Math.random() * (amountsReceived.maximum - amountsReceived.minimum + 1)) + amountsReceived.minimum;
+      numbersToDisplay[i] = randomNumber
+    }
+  }
 
   // Esconde o form.
   form.style.display = `none`;
   // Faz a tela de resultado aparecer.
   resultScreen.style.display = `flex`;
+
+  // variavel para controlar o tempo de aparecimento entre um número e outro.
+  const delayToAppear = 3000;
+
+  Object.values(numbersToDisplay).forEach((value, index) => {
+    // Multiplica o valor da variavel pelo index, assim "reiniciando" o tempo para cada item aparecer.
+    const delayForEachNumber = index * delayToAppear;
+
+    // Faz os números sorteados aparecerem um de cada vez.
+    setTimeout(() => {
+      // Criando o elemento "li" e adicionando a classe.
+      const li = document.createElement(`li`);
+      li.classList.add(`drawn-number`);
+
+      // Criando o elemento "p" e obtendo o valor do objeto.
+      const drawnNumber = document.createElement(`p`);
+      drawnNumber.textContent = value;
+
+      // Adicionando a "li" na "ul"
+      listNumbers.appendChild(li);
+      // Adicionando o "p" na "li"
+      li.appendChild(drawnNumber);
+    }, delayForEachNumber);
+  });   
 }
 
 // Função para sortear novamente.
