@@ -81,3 +81,43 @@ body {
 li {
   list-style: none;
 }
+
+.gradient-border {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 0.6rem;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-border);
+    background-size: 200% 200%;
+    animation: borderMove 4s linear infinite;
+  }
+
+  &::after {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: var(--background-secondary);
+    border-radius: 0.4rem;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+  }
+}

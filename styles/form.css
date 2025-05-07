@@ -159,50 +159,24 @@ form {
     transition: color 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      border-radius: 0.6rem;
-      transition: opacity 0.3s ease;
-      opacity: 0;
-      z-index: -1;
-    }
-
-    &::before {
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: var(--gradient-border);
-      background-size: 200% 200%;
-      animation: borderMove 4s linear infinite;
-    }
-
-    &::after {
-      top: 2px;
-      left: 2px;
-      right: 2px;
-      bottom: 2px;
-      background-color: var(--background-secondary);
-      border-radius: 0.4rem;
-    }
-
     img {
       transition: transform 0.3s ease;
     }
-
+    
     &:hover {
-      &::before,
-      &::after {
-        opacity: 1;
+      img {
+        transform: translateX(4px);
       }
-
+    }img {
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover {
       img {
         transform: translateX(4px);
       }
     }
-  }
+  }  
 }
 
 @keyframes borderMove {

@@ -108,7 +108,15 @@ function generateNumbers() {
       // Adicionando o "p" na "li"
       li.appendChild(drawnNumber);
     }, delayForEachNumber);
-  });   
+  });
+  
+  // Armazena o total de tempo de delay dos números.
+  const totalAnimationTime = Object.keys(numbersToDisplay).length * delayToAppear + 800;
+
+  // Após o tempo total de animações ter passado o botão de sortear novamente aparece.
+  setTimeout (() => {
+    newDrawButton.style.display = `flex`;
+  }, totalAnimationTime)
 }
 
 // Função para sortear novamente.
@@ -125,4 +133,6 @@ function newDraw() {
   amountNumbers.value = ``;
   minNumber.value = ``;
   maxNumber.value = ``;
+
+  newDrawButton.style.display = `none`;
 }
